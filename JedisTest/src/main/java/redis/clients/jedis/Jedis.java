@@ -143,6 +143,7 @@ public Jedis(final URI uri, final int connectionTimeout, final int soTimeout) {
    * EX|PX, key 的存在时间: EX = seconds; PX = milliseconds
    * @return Status code reply
    */
+  //设置过期时间,手机验证码等功能常用
   public String set(final String key, final String value, final SetParams params) {
     checkIsInMultiOrPipeline();// 判断 客户端连接是否正常
     client.set(key, value, params);
